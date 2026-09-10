@@ -1,5 +1,5 @@
 spring:
-    application.name: resilience4j-demo
+    application.name: order-payment-api
     jackson.serialization.indent_output: true
 
 server:
@@ -11,6 +11,11 @@ management.endpoint.health.show-details: always
 management.health.diskspace.enabled: false
 management.health.circuitbreakers.enabled: true
 management.health.ratelimiters.enabled: false
+
+management.dynatrace.metrics.export:
+    enabled: true
+    v2:
+        enrich-with-dynatrace-metadata: true
 
 info:
     name: ${spring.application.name}
