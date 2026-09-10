@@ -1,4 +1,4 @@
-package io.github.robwin.controller;
+package io.github.nickmontana.controller;
 
 import io.github.resilience4j.bulkhead.*;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
@@ -15,7 +15,7 @@ import io.github.resilience4j.retry.Retry;
 import io.github.resilience4j.retry.RetryRegistry;
 import io.github.resilience4j.timelimiter.TimeLimiter;
 import io.github.resilience4j.timelimiter.TimeLimiterRegistry;
-import io.github.robwin.service.Service;
+import io.github.nickmontana.service.Service;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

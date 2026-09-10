@@ -22,7 +22,11 @@ info:
     description: resilience4j demo
     environment: ${spring.profiles.active}
     version: 0.0.1
-
+logging:
+    level:
+        io:
+            micrometer:
+                dynatrace: DEBUG
 management.metrics.tags.application: ${spring.application.name}
 management.metrics.distribution.percentiles-histogram.http.server.requests: true
 management.metrics.distribution.percentiles-histogram.resilience4j.circuitbreaker.calls: true
