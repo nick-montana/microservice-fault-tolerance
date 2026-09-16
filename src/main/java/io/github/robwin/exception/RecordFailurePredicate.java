@@ -1,4 +1,4 @@
-package io.github.nickmontana.exception;
+package io.github.robwin.exception;
 
 import java.util.function.Predicate;
 

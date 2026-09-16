@@ -1,4 +1,4 @@
-package io.github.nickmontana.exception;
+package io.github.robwin.exception;
 
 public class BusinessException extends RuntimeException {
 

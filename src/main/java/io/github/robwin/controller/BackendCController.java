@@ -1,6 +1,6 @@
-package io.github.nickmontana.controller;
+package io.github.robwin.controller;
 
-import io.github.nickmontana.service.Service;
+import io.github.robwin.service.Service;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,82 +11,82 @@ import reactor.core.publisher.Mono;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
-@RequestMapping(value = "/backendA")
-public class BackendAController {
+@RequestMapping(value = "/backendC")
+public class BackendCController {
 
-    private final Service businessAService;
+    private final Service businessCService;
 
-    public BackendAController(@Qualifier("backendAService") Service businessAService){
-        this.businessAService = businessAService;
+    public BackendCController(@Qualifier("backendCService")Service businessCService){
+        this.businessCService = businessCService;
     }
 
     @GetMapping("failure")
     public String failure(){
-        return businessAService.failure();
+        return businessCService.failure();
     }
 
     @GetMapping("success")
     public String success(){
-        return businessAService.success();
+        return businessCService.success();
     }
 
     @GetMapping("successException")
     public String successException(){
-        return businessAService.successException();
+        return businessCService.successException();
     }
 
     @GetMapping("ignore")
     public String ignore(){
-        return businessAService.ignoreException();
+        return businessCService.ignoreException();
     }
 
     @GetMapping("monoSuccess")
     public Mono<String> monoSuccess(){
-        return businessAService.monoSuccess();
+        return businessCService.monoSuccess();
     }
 
     @GetMapping("monoFailure")
     public Mono<String> monoFailure(){
-        return businessAService.monoFailure();
+        return businessCService.monoFailure();
     }
 
     @GetMapping("fluxSuccess")
     public Flux<String> fluxSuccess(){
-        return businessAService.fluxSuccess();
-    }
-
-    @GetMapping("monoTimeout")
-    public Mono<String> monoTimeout(){
-        return businessAService.monoTimeout();
-    }
-
-    @GetMapping("fluxTimeout")
-    public Flux<String> fluxTimeout(){
-        return businessAService.fluxTimeout();
-    }
-
-    @GetMapping("futureFailure")
-    public CompletableFuture<String> futureFailure(){
-        return businessAService.futureFailure();
-    }
-
-    @GetMapping("futureSuccess")
-    public CompletableFuture<String> futureSuccess(){
-        return businessAService.futureSuccess();
-    }
-
-    @GetMapping("futureTimeout")
-    public CompletableFuture<String> futureTimeout(){
-        return businessAService.futureTimeout();
+        return businessCService.fluxSuccess();
     }
 
     @GetMapping("fluxFailure")
     public Flux<String> fluxFailure(){
-        return businessAService.fluxFailure();
+        return businessCService.fluxFailure();
+    }
+
+    @GetMapping("monoTimeout")
+    public Mono<String> monoTimeout(){
+        return businessCService.monoTimeout();
+    }
+
+    @GetMapping("fluxTimeout")
+    public Flux<String> fluxTimeout(){
+        return businessCService.fluxTimeout();
+    }
+
+    @GetMapping("futureFailure")
+    public CompletableFuture<String> futureFailure(){
+        return businessCService.futureFailure();
+    }
+
+    @GetMapping("futureSuccess")
+    public CompletableFuture<String> futureSuccess(){
+        return businessCService.futureSuccess();
+    }
+
+    @GetMapping("futureTimeout")
+    public CompletableFuture<String> futureTimeout(){
+        return businessCService.futureTimeout();
     }
 
     @GetMapping("fallback")
     public String failureWithFallback(){
-        return businessAService.failureWithFallback();
+        return businessCService.failureWithFallback();
     }
 }
