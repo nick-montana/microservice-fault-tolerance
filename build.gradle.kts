@@ -1,7 +1,7 @@
 
 plugins {
     application
-    id("org.springframework.boot") version ("3.4.1")
+    id("org.springframework.boot") version ("3.5.11")
 }
 
 java {
@@ -23,6 +23,9 @@ repositories {
     maven {
         url = uri("https://oss.sonatype.org/content/repositories/snapshots")
     }
+    flatDir {
+        dirs("libs")
+    }
 
 }
 
@@ -42,7 +45,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-aop")
-    implementation("io.micrometer:micrometer-registry-dynatrace")
+    implementation("io.micrometer:micrometer-registry-dynatrace:latest.release")
 
     	implementation("io.github.resilience4j:resilience4j-spring-boot3")
 	implementation("io.github.resilience4j:resilience4j-all") // Optional, only required when you want to use the Decorators class
@@ -54,4 +57,6 @@ dependencies {
 	implementation("io.vavr:vavr-jackson:0.10.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
+    implementation(files("libs/bizevent-agent-0.0.3-SNAPSHOT-plain.jar"))
+    implementation("com.dynatrace.openkit:openkit-java:3.3.0") // required by bizevent-agent
 }
