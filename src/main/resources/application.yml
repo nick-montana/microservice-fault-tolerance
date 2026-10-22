@@ -28,10 +28,10 @@ management.metrics.distribution.percentiles-histogram.http.server.requests: true
 management.metrics.distribution.percentiles-histogram.resilience4j.circuitbreaker.calls: true
 
 com.intelliplatforms.bizevents.enabled: true
-com.intelliplatforms.bizevents.applicationId: 0d058a8f-b6e3-492a-a35a-58bb95d813d8
+com.intelliplatforms.bizevents.applicationId: cf0411aa-00ed-4c07-9ad2-358aaa7685aa
 com.intelliplatforms.bizevents.deviceId: 123
 
-com.intelliplatforms.bizevents.endpointUrl: https://DESKTOP-GEQUNFQ.lan:9999/mbeacon/jca86141
+com.intelliplatforms.bizevents.endpointUrl: https://DESKTOP-GEQUNFQ:9999/mbeacon/hkh71453
 com.intelliplatforms.bizevents.manufacturer: TranslucentAI
 com.intelliplatforms.bizevents.applicationName: translucent-ai-claims-processor-springboot
 com.intelliplatforms.bizevents.applicationVersion: 1.0.0
@@ -145,15 +145,3 @@ resilience4j.timelimiter:
             baseConfig: default
         backendB:
             baseConfig: default
-com:
-    intelliplatforms:
-        bizevents:
-            enabled: true
-            applicationId: 0d058a8f-b6e3-492a-a35a-58bb95d813d8
-            deviceId: 123
-            endpointUrl: https://DESKTOP-GEQUNFQ.lan:9999/mbeacon/jca86141
-            waitForInitCompletion: false
-            logLevel: DEBUG
-            applicationName: claims-adjudication-api-spring-boot
-            operatingSystem: WINDOWS
-            manufacturer: pharmacy-benefits-manager
